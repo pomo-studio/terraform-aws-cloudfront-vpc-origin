@@ -13,6 +13,8 @@ Let CloudFront reach an application that lives inside a VPC, without giving the 
 
 Reach for this module when the origin already exists behind an internal load balancer or VPC endpoint and you want CloudFront, not the internet, to be the only way in. It creates the CloudFront side of that connection and nothing else.
 
+The VPC that hosts the origin needs an internet gateway. CloudFront requires one for a VPC origin, even though origin traffic does not use it.
+
 Use a different tool when you also need the distribution (that is [`pomo-studio/cloudfront-frontdoor/aws`](https://registry.terraform.io/modules/pomo-studio/cloudfront-frontdoor/aws)), or when the origin is already public.
 
 ## Quickstart
